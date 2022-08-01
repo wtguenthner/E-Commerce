@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { restart } = require('nodemon');
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
@@ -6,6 +7,7 @@ const { Category, Product } = require('../../models');
 router.get('/', (req, res) => {
   // find all categories
   // be sure to include its associated Products
+  Category.findAll({include:[Product]}).then(data => res.json(data))
 });
 
 router.get('/:id', (req, res) => {
