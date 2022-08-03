@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async(req, res) => {
-  
+  Category.create(req.body).then((data) => res.json(data))
 });
 
 router.put('/:id', async (req, res) => {
