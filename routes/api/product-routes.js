@@ -11,13 +11,13 @@ router.get("/", (req, res) => {
 });
 
 // get one product
-router.get("/:id", async(req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const userData =  await Product.findByPk(req.params.id, {
-      include: [Tag]
+    const userData = await Product.findByPk(req.params.id, {
+      include: [Tag],
     });
     if (!userData) {
-      res.status(404).json({ message: 'No user with this id!' });
+      res.status(404).json({ message: "No user with this id!" });
       return;
     }
     res.status(200).json(userData);
