@@ -28,6 +28,8 @@ To install and run the application:
 
 - [@taylorguenthner](https://github.com/wtguenthner)
 
+## Lessons
+In this project we learned how to set up a MySQL database using Sequelize as well as using API routes to view, update and delete the tables inside of the database. The routes were set up using the Express method Router() to configure the database itself.
 
 ## Tech Stack
 
